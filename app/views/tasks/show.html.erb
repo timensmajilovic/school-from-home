@@ -1,0 +1,13 @@
+
+<div class="container-fluid mt-3">
+<h3><%= @task.title%></h3>
+<a>Post by: <%= @task.user.email.to_s %></a>
+<p><%= @task.content%></p>
+
+<span>
+<%= link_to "Edit", edit_task_path(@task.id), class: 'btn btn-primary'%>
+<%= link_to "Back", tasks_path, class: 'btn btn-secondary' %><br><br>
+<a style="display: inline"><%= button_to "Delete", task_path(@task.id), method: :delete, class: 'btn btn-danger' %>
+
+</span>
+</div>
