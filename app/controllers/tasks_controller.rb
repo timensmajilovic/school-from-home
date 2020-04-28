@@ -5,6 +5,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+   
     
   end
 
@@ -30,7 +31,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
 
-    if @task.update(blog_params)
+    if @task.update(task_params)
       redirect_to @task
     else
       render :edit
@@ -47,6 +48,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:title, :content, :datum, :ura)
   end
 end

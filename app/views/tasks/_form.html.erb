@@ -16,6 +16,16 @@
             <%= f.text_area :content, class: 'form-control'%>
                 </div>
 
+                <div class="form-group">
+                    <%= f.label :datum %>
+                    <%= f.date_select :datum, class: 'form-control'%>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :ura %>
+                    <%= f.time_select :ura, class: 'form-control'%>
+                </div>
+
                 
 
             <%= f.submit "Post", class: 'btn btn-outline-primary'%>
