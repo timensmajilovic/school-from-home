@@ -3,7 +3,7 @@
 <h3><%= @task.title%></h3>
 <a>Post by: <%= @task.user.email.to_s %></a>
 <p><%= @task.content%></p>
-<p>Do: <%=  @task.datum %>&nbsp;<%= @task.ura.strftime("%H:%M")%></p>
+<p>Do: <%=  @task.start_time %></p>
 
 <span>
 <%= link_to "Edit", edit_task_path(@task.id), class: 'btn btn-primary'%>
