@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_115153) do
+ActiveRecord::Schema.define(version: 2020_05_12_124513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "classes", force: :cascade do |t|
+    t.string "name"
+    t.string "opis"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "nalogas", force: :cascade do |t|
     t.datetime "start_time"
@@ -28,6 +35,9 @@ ActiveRecord::Schema.define(version: 2020_04_29_115153) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.datetime "start_time"
+    t.bigint "class_id"
+    t.boolean "ocenjevanje"
+    t.index ["class_id"], name: "index_tasks_on_class_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +54,5 @@ ActiveRecord::Schema.define(version: 2020_04_29_115153) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tasks", "classes"
 end

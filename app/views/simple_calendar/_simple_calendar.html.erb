@@ -1,9 +1,9 @@
 <%= month_calendar attribute: :start_time, events: @tasks do |date, tasks| %>
 
-  <p class="h6"><%= date %></p>
+  <p class="h6"><%= date.day %></p>
   <% tasks.each do |task| %>
-    <div>
-      <%= task.title %>
+    <div class="mb-3 text-monospace text-decoration-none ">
+      <%= link_to task.title, task_path(task), class: "text-white" %>
     </div>
   <% end %>
 <% end %>
