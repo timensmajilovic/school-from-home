@@ -1,2 +1,0 @@
-class Naloga < ApplicationRecord
-end

@@ -1,0 +1,25 @@
+<div class ="flex-row d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="card mt-5">
+        <div class="card-body">
+            <%= form_for @group do |form| %>
+
+                <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+            <%= form.label :opis%>
+            <%= form.text_area :opis, class: 'form-control'%>
+                </div>
+
+                
+
+            <%= form.submit "Post", class: 'btn btn-outline-primary'%>
+            
+        <% end %>
+        </div>
+    </div>
+    </div>
+</div>
