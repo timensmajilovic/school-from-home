@@ -7,26 +7,37 @@
             <%= form_for @task do |f| %>
 
                 <div class="form-group">
-            <%= f.label :title %>
+            <%= f.label :Naloga %>:
             <%= f.text_field :title, class: 'form-control' %>
                 </div>
 
                 <div class="form-group">
-            <%= f.label :content%>
+            <%= f.label :Opis%>:
             <%= f.text_area :content, class: 'form-control'%>
                 </div>
 
                 <div class="form-group">
-                    <%= f.label :datum %>
+                    <%= f.label :Datum_do %>:
                     <%= f.datetime_select :start_time, class: 'form-control'%>
                 </div>
 
+                <div class="form-group">
+                    Razred: <%= f.select :group_id, Group.all.map {|c| [c.name, c.id]} %>
+                </div>
+
+                <div class="form-group">
+                    Ocenjevanje: 
+                        <%= f.select :ocenjevanje, [['Da', true], ['Ne', false]] %>
+
+
+
+                </div>
                 
 
                 
 
-            <%= f.submit "Post", class: 'btn btn-outline-primary'%>
-            <%= link_to  "Back", tasks_path, class: 'btn btn-outline-secondary' %>
+            <%= f.submit "Dodaj nalogo", class: 'btn btn-outline-primary'%>
+            <%= link_to  "Nazaj", tasks_path, class: 'btn btn-outline-secondary' %>
         <% end %>
         </div>
     </div>

@@ -1,16 +1,17 @@
 <div class="mb-5">
     <% if user_signed_in? %>
     <div class="float-right">
-        <%= link_to "dodaj razred", new_class_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "dodaj razred", new_group_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "dodaj nalogo", new_task_path, class: "btn btn-outline-secondary" %>
     </div>
     <% end %>
 </div>
 
-<% if @classes.size > 0 %>
-    <% @classes.each do |class| %>
+<% if @groups.size > 0 %>
+    <% @groups.each do |group| %>
     <div class="card mb-3 p-3 ">
-        <h3><%= link_to class.name, class %></h3>
-        <a class="">Rules:</a> <%= simple_format class.rules, class: "font-italic" %>
+        <h3><%= link_to group.name, group %></h3>
+        <a class="">Opis:</a> <%= simple_format group.opis, class: "font-italic" %>
     </div>
     <% end %>
 <% else %>
